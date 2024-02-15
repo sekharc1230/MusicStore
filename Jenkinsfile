@@ -15,8 +15,8 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh "dotnet test --logger "junit;LogFilePath=path/to/your/test/results.xml" ./MusicStoreTest/MusicStoreTest.csproj",
-                junit testResults '**/TEST-*.xml'
+                sh 'dotnet test --logger "junit;LogFilePath=path/to/your/test/results.xml" ./MusicStoreTest/MusicStoreTest.csproj',
+                junit testResults: '**/TEST-*.xml'
             }
         }
     }
